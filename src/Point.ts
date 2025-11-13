@@ -28,7 +28,7 @@ export default class Point implements Geometry {
     return this.coordinate.length >0 ? this.coordinate[1] : Number.NaN ;
   }
 
-  clone(): Geometry {
+  clone(): Point {
    return new Point(this.coordinate);
   }
 

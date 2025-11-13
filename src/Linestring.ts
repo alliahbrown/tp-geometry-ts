@@ -24,7 +24,7 @@ export default class LineString implements Geometry {
         return this.points[n];
         }
 
-    clone(): Geometry {
+    clone(): LineString {
       return new LineString(this.points);
     }
 
@@ -33,6 +33,5 @@ export default class LineString implements Geometry {
         point.translate(dx, dy);
       }); 
     }
-
 
     }

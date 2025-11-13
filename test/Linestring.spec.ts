@@ -25,7 +25,7 @@ it("test translate", () => {
     const a = new Point([1.0,2.0]);
     const b = new Point([3.0,4.0]);
     const g = new Linestring([a,b]);
-    const copy = g.clone() as LineString;
+    const copy = g.clone();
     expect(copy).to.deep.equal(g);
     copy.translate(2.0,2.0);
     expect(copy).to.not.equal(g);

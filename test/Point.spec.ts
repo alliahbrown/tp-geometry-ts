@@ -20,7 +20,7 @@ describe("test Point", () => {
     });
     it("test translate", () => {
         const p = new Point([1.0,1.0]);
-        const copy = p.clone() as Point
+        const copy = p.clone()
         expect(copy).to.deep.equal(p);
         copy.translate(2.0,2.0);
         expect(copy).to.not.equal(p);
