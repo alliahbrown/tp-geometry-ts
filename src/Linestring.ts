@@ -4,19 +4,19 @@ export default class LineString {
   private points: Point[];  
 
     constructor(points?: Point[]) {
-        this.points = points;
+        this.points = points || [] ;
     }
 
-    LineString(): Point[] {
-        return this.points;
-     }
-     
      getType(): string { 
       return "LineString";
      }
 
+     isEmpty(): boolean {
+       return this.points.length === undefined || this.points?.length === 0;
+     }
+
      getNumPoints(): number {
-        return this.points ? this.points.length : 0 ;
+        return this.points.length ;
      }
 
         getPointN(n: number): Point {
