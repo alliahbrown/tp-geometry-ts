@@ -21,4 +21,16 @@ it("test constructor with points", () => {
     expect(g.getPointN(1)).to.equal(b);
     expect(g.isEmpty()).to.equal(false);
 });
+it("test translate", () => {
+    const a = new Point([1.0,2.0]);
+    const b = new Point([3.0,4.0]);
+    const g = new Linestring([a,b]);
+    const copy = g.clone() as LineString;
+    expect(copy).to.deep.equal(g);
+    copy.translate(2.0,2.0);
+    expect(copy).to.not.equal(g);
+    expect(copy.getPointN(0).getCoordinate()).to.deep.equal([3.0,4.0]);
+    expect(copy.getPointN(1).getCoordinate()).to.deep.equal([5.0,6.0]);
+});
+
 });

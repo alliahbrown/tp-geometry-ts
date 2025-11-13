@@ -28,4 +28,14 @@ export default class Point implements Geometry {
     return this.coordinate.length >0 ? this.coordinate[1] : Number.NaN ;
   }
 
+  clone(): Geometry {
+   return new Point(this.coordinate);
+  }
+
+
+  translate(dx: number, dy: number): void {
+   this.coordinate[0] += dx;
+   this.coordinate[1] += dy;
+  }
+
 }

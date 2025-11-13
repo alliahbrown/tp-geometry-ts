@@ -18,5 +18,17 @@ describe("test Point", () => {
         expect(p.y()).to.equal(4.0);
         expect(p.isEmpty()).to.equal(false);
     });
+    it("test translate", () => {
+        const p = new Point([1.0,1.0]);
+        const copy = p.clone() as Point
+        expect(copy).to.deep.equal(p);
+        copy.translate(2.0,2.0);
+        expect(copy).to.not.equal(p);
+        expect(copy.getCoordinate()).to.deep.equal([3.0,3.0]);
+        expect(copy.x()).to.equal(3.0);
+        expect(copy.y()).to.equal(3.0);
+    });
+
+
 });
 

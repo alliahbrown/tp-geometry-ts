@@ -1,6 +1,7 @@
 import Point from "./Point";
+import Geometry from "./Geometry";
 
-export default class LineString {
+export default class LineString implements Geometry {
   private points: Point[];  
 
     constructor(points?: Point[]) {
@@ -22,5 +23,16 @@ export default class LineString {
         getPointN(n: number): Point {
         return this.points[n];
         }
+
+    clone(): Geometry {
+      return new LineString(this.points);
+    }
+
+    translate(dx: number, dy: number): void {
+      this.points.forEach((point) => {
+        point.translate(dx, dy);
+      }); 
+    }
+
 
     }
