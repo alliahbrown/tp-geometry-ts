@@ -1,6 +1,4 @@
 import Coordinate from "./Coordinate";
-import Enveloppe from "./Enveloppe";
-import EnveloppeBuilder from "./EnveloppeBuilder";
 
 export default class Enveloppe {
 

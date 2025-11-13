@@ -24,8 +24,6 @@ build() : Enveloppe {
     const maxY = Math.max.apply(null, this.yVals);
 
     return(new Enveloppe([minX,minY], [maxX,maxY]))
-
-        
     
 }
 }
