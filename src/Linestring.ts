@@ -2,6 +2,7 @@ import Point from "./Point";
 import Geometry from "./Geometry";
 import Enveloppe from "./Enveloppe";
 import EnveloppeBuilder from "./EnveloppeBuilder";
+import GeometryVisitor from "./GeometryVisitor";
 
 export default class LineString implements Geometry {
   private points: Point[];  
@@ -43,5 +44,9 @@ getEnvelope(): Enveloppe {
         point.translate(dx, dy);
       }); 
     }
+
+accept(visitor: GeometryVisitor): void {
+      visitor.visitLineString(this);  
+}
 
     }
