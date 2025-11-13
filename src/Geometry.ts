@@ -3,5 +3,5 @@ export default interface Geometry {
     isEmpty():boolean;
     clone(): Geometry;
     translate(dx: number, dy: number): void;
-    
+    getEnvelope(): Enveloppe;
 }

@@ -1,4 +1,6 @@
 import Coordinate from "./Coordinate";
+import Enveloppe from "./Enveloppe";
+import EnveloppeBuilder from "./EnveloppeBuilder";
 
 export default class Enveloppe {
 
@@ -32,6 +34,7 @@ getXmax():number{
 getYmax():number{
     return this.topRight.length > 0 ? this.topRight[1] : Number.NaN ;
 };
+
 
 toString() : String {
     if (this.isEmpty()){

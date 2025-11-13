@@ -28,6 +28,12 @@ describe("test Point", () => {
         expect(copy.x()).to.equal(3.0);
         expect(copy.y()).to.equal(3.0);
     });
+    it("test enveloppe", () => {
+        const p = new Point([1.0,1.0]);
+        const env = p.getEnvelope();
+        expect(env.isEmpty()).to.equal(false);
+        expect(env.toString()).to.equal("[1,1,1,1]");
+    });
 
 
 });
