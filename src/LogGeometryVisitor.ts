@@ -4,30 +4,25 @@ import LineString from "./Linestring";
 
 export default class LogGeometryVisitor implements GeometryVisitor {
 
-    visitPoint(point: Point): string {
-        let logs: string = "";
+    constructor(private log = console.log) {
+
+    }
+
+    visitPoint(point: Point): void {
         if (point.isEmpty()) {
-            logs = "Je suis un point vide.";
-            console.log(logs);
-            return(logs[0]);
+            this.log("Je suis un point vide.");
+            
         } else {
-            logs = "Je suis un point de coordonnés: (x="+point.x()+" et y="+point.y()+").";
-        console.log(logs);   
-        return(logs[0]);
+            this.log("Je suis un point de coordonnés: (x="+point.x()+" et y="+point.y()+")");
         }       
     }
 
 
-    visitLineString(lineString: LineString): string {
-        let logs: string = "";
+    visitLineString(lineString: LineString): void {
         if (lineString.isEmpty()) {
-            logs = "Je suis une polyligne vide." ;
-            console.log(logs);
-            return(logs[0]);
+            this.log("Je suis une polyligne vide.");
         } else {
-            logs = "Je suis une polyligne definie par"+ lineString.getNumPoints()+"points.";
-        console.log(logs);   
-        return(logs[0]);
+            this.log("Je suis une polyligne definie par "+ lineString.getNumPoints()+" points");
         }       
     }
 
