@@ -3,6 +3,7 @@ import Enveloppe from "./Enveloppe";
 import GeometryVisitor from "./GeometryVisitor";
 import LineString from "./Linestring";
 import Point from "./Point";
+import GeometryCollection from "./GeometryCollection";
 
 export default class EnveloppeBuilder implements GeometryVisitor {
 
@@ -41,5 +42,12 @@ export default class EnveloppeBuilder implements GeometryVisitor {
     visitPoint(point: Point): void {
         this.insert(point.getCoordinate());
     }
-}
+
+    visitGeometryCollection(geometryCollection: GeometryCollection): void {
+        for (let i = 0; i < geometryCollection.getNumGeometries(); i++) {
+            const geom = geometryCollection.getGeometryN(i);
+            geom.accept(this);
+        }
+}       
+}   
 

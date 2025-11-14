@@ -20,7 +20,6 @@ describe("test GeometryWithCachedEnvelope ", () => {
         expect(copy.isEmpty()).to.equal(false);
     });
 
-
     it("test getEnvelope() caching", () => {
         let point = new Point([3.0, 3.0]);
         let g = new GeometryWithCachedEnvelope(point);

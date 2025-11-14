@@ -1,6 +1,7 @@
 import GeometryVisitor from "./GeometryVisitor";
 import Point from "./Point";
 import LineString from "./Linestring";
+import GeometryCollection from "./GeometryCollection";
 
 export default class WktVisitor implements GeometryVisitor {
     private buffer: string;
@@ -14,7 +15,7 @@ export default class WktVisitor implements GeometryVisitor {
         } else {
             this.buffer = `POINT(${point.x()} ${point.y()})`;
         }
-    }   
+    }
 
     visitLineString(lineString: LineString): void {
         if (lineString.isEmpty()) {
@@ -27,7 +28,21 @@ export default class WktVisitor implements GeometryVisitor {
             }
             this.buffer = `LINESTRING(${coords.join(",")})`;
         }
-    }       
+    }
 
+    visitGeometryCollection(geometryCollection: GeometryCollection): void {
 
+        if (geometryCollection.isEmpty()) {
+            this.buffer = "GEOMETRYCOLLECTION EMPTY";
+        } else {
+            const geoms: string[] = [];
+            for (let i = 0; i < geometryCollection.getNumGeometries(); i++) {
+                const geom = geometryCollection.getGeometryN(i);
+                const wktVisitor = new WktVisitor();
+                geom.accept(wktVisitor);
+                geoms.push(wktVisitor.getResult());
+            }
+            this.buffer = `GEOMETRYCOLLECTION(${geoms.join(",")})`;
+        }
+    }
 }   
