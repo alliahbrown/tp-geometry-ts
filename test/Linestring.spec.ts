@@ -3,6 +3,8 @@ import { expect } from "chai";
 import Linestring from "../src/Linestring";
 import Point from "../src/Point";
 import LineString from "../src/Linestring";
+import Enveloppe from "../src/Enveloppe";
+import EnveloppeBuilder from "../src/EnveloppeBuilder";
 
 describe("test Linestring", () => {
     it("test default constructor", () => {
@@ -32,13 +34,13 @@ it("test translate", () => {
     expect(copy.getPointN(0).getCoordinate()).to.deep.equal([3.0,4.0]);
     expect(copy.getPointN(1).getCoordinate()).to.deep.equal([5.0,6.0]);
 });
-it("test enveloppe", () => {
+it("test getEnvelope()", () => {
     const a = new Point([1.0,2.0]);
     const b = new Point([3.0,4.0]);
-    const g = new Linestring([a,b]);
-    const env = g.getEnvelope();
-    expect(env.isEmpty()).to.equal(false);
-    expect(env.toString()).to.equal("[1,3,2,4]");
+    const geometry = new Linestring([a,b]);
+    const env = geometry.getEnvelope().toString();
+    expect(env).to.equal("[1,3,2,4]");
+
 }); 
   
 

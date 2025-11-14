@@ -1,7 +1,5 @@
 import Point from "./Point";
-import Geometry from "./Geometry";
-import Enveloppe from "./Enveloppe";
-import EnveloppeBuilder from "./EnveloppeBuilder";
+
 import GeometryVisitor from "./GeometryVisitor";
 import AbstractGeometry from "./AbstractGeometry";
 
@@ -33,13 +31,6 @@ export default class LineString extends AbstractGeometry {
       return new LineString(this.points);
     }
 
-getEnvelope(): Enveloppe {
-    const builder = new EnveloppeBuilder();
-    this.points.forEach((point) => {
-      builder.insert(point.getCoordinate());
-    });
-    return(builder.build());
-    }
 
     translate(dx: number, dy: number): void {
       this.points.forEach((point) => {

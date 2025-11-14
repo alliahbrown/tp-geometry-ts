@@ -1,6 +1,6 @@
 import "mocha";
 import { expect } from "chai";
-import AbstractGeometry from "../src/AbstractGeometry";import Point from "../src/Point";
+import Point from "../src/Point";
 import Linestring from "../src/Linestring";
 
 describe("test AbstractGeometry ", () => {
