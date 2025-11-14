@@ -17,21 +17,21 @@ describe("test WktWriter ", () => {
         const ls = new Linestring();
         const writer = new WktWriter();
         const wkt = writer.write(ls);
-        expect(wkt).to.equal("LINESTRING EMPTY");  
+        expect(wkt).to.equal("LINESTRING EMPTY");
     });
 
     it("test write Point", () => {
         const writer = new WktWriter();
-        const p = new Point([1.0,1.0]);
+        const p = new Point([1.0, 1.0]);
         const wkt = writer.write(p);
         expect(wkt).to.equal("POINT(1 1)");
     });
     it("test write LineString", () => {
         const writer = new WktWriter();
 
-        const a = new Point([1.0,2.0]);
-            const b = new Point([3.0,4.0]);
-            const g = new Linestring([a,b]);
+        const a = new Point([1.0, 2.0]);
+        const b = new Point([3.0, 4.0]);
+        const g = new Linestring([a, b]);
 
         const wkt = writer.write(g);
         expect(wkt).to.equal("LINESTRING(1 2,3 4)");

@@ -43,7 +43,7 @@ describe("test LengthVisitor ", () => {
 
         const p3 = new Point([3.0, 4.0]);
         const p4 = new Point([6.0, 8.0]);
-        const line2 = new Linestring([p3, p4]); 
+        const line2 = new Linestring([p3, p4]);
 
         const geomCollection = new GeometryCollection([line1, line2]);
         geomCollection.accept(visitor);

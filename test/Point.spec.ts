@@ -12,24 +12,24 @@ describe("test Point", () => {
         expect(p.getType()).to.equal("Point");
     });
     it("test constructor with coordinates", () => {
-        const p = new Point([3.0,4.0]);
-        expect(p.getCoordinate()).to.deep.equal([3.0,4.0]);
+        const p = new Point([3.0, 4.0]);
+        expect(p.getCoordinate()).to.deep.equal([3.0, 4.0]);
         expect(p.x()).to.equal(3.0);
         expect(p.y()).to.equal(4.0);
         expect(p.isEmpty()).to.equal(false);
     });
     it("test translate", () => {
-        const p = new Point([1.0,1.0]);
+        const p = new Point([1.0, 1.0]);
         const copy = p.clone()
         expect(copy).to.deep.equal(p);
-        copy.translate(2.0,2.0);
+        copy.translate(2.0, 2.0);
         expect(copy).to.not.equal(p);
-        expect(copy.getCoordinate()).to.deep.equal([3.0,3.0]);
+        expect(copy.getCoordinate()).to.deep.equal([3.0, 3.0]);
         expect(copy.x()).to.equal(3.0);
         expect(copy.y()).to.equal(3.0);
     });
     it("test enveloppe", () => {
-        const p = new Point([1.0,1.0]);
+        const p = new Point([1.0, 1.0]);
         const env = p.getEnvelope();
         expect(env.isEmpty()).to.equal(false);
         expect(env.toString()).to.equal("[1,1,1,1]");

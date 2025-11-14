@@ -23,11 +23,11 @@ describe("test EnveloppeBuilder", () => {
         const p2 = new Point([2.0, 0.0]);
         const p3 = new Point([1.0, 6.0]);
         const ls = new Linestring([p2, p3]);
-        const geomCollection = new GeometryCollection([p1,ls]);
+        const geomCollection = new GeometryCollection([p1, ls]);
 
         geomCollection.accept(builder);
 
-        const result = builder.build();         
+        const result = builder.build();
         expect(result.toString()).to.equal("[0,2,0,6]");
     });
 }

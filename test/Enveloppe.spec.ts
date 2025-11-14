@@ -17,7 +17,7 @@ describe("test Enveloppe", () => {
 
     });
     it("test constructor with coordinates", () => {
-        const env = new Enveloppe(([1.0,2.0]), ([3.0,4.0]));
+        const env = new Enveloppe(([1.0, 2.0]), ([3.0, 4.0]));
         expect(env.isEmpty()).to.equal(false);
         expect(env.toString()).to.equal("[1,3,2,4]");
     });

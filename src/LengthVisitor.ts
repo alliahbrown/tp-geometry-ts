@@ -5,10 +5,10 @@ import GeometryCollection from "./GeometryCollection";
 
 export default class LengthVisitor implements GeometryVisitor<number> {
     private totalLength: number;
-    
+
     constructor() {
         this.totalLength = 0;
-    }   
+    }
     getResult(): number {
         return this.totalLength;
     }
@@ -21,8 +21,8 @@ export default class LengthVisitor implements GeometryVisitor<number> {
     visitLineString(lineString: LineString): number {
         if (lineString.isEmpty()) {
             return 0;
-        }           
-        let length = 0;     
+        }
+        let length = 0;
         for (let i = 1; i < lineString.getNumPoints(); i++) {
             const pt1 = lineString.getPointN(i - 1);
             const pt2 = lineString.getPointN(i);

@@ -3,10 +3,10 @@ import GeometryVisitor from "./GeometryVisitor";
 
 export default interface Geometry {
     getType(): string;
-    isEmpty():boolean;
+    isEmpty(): boolean;
     clone(): Geometry;
     translate(dx: number, dy: number): void;
     getEnvelope(): Enveloppe;
     accept<T>(visitor: GeometryVisitor<T>): T;
-    asText():string;
+    asText(): string;
 }

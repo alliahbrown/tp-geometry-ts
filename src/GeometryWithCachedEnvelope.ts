@@ -7,7 +7,7 @@ export default class GeometryWithCachedEnvelope implements Geometry {
     private cachedEnvelope: Enveloppe | null = null;
 
     constructor(original: Geometry) {
-        this.original = original;   
+        this.original = original;
     }
 
     getEnvelope(): Enveloppe {

@@ -13,7 +13,7 @@ describe("test GeometryWithCachedEnvelope ", () => {
         expect(g.getType()).to.equal("Point");
         expect(g.isEmpty()).to.equal(false);
         expect(g.asText()).to.equal("POINT(3 3)");
-        
+
         const copy = g.clone();
         expect(copy).to.not.equal(g);
         expect(copy.getType()).to.equal("Point");

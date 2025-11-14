@@ -12,10 +12,10 @@ export default class LogGeometryVisitor implements GeometryVisitor<void> {
     visitPoint(point: Point): void {
         if (point.isEmpty()) {
             this.log("Je suis un point vide.");
-            
+
         } else {
-            this.log("Je suis un point de coordonnés: (x="+point.x()+" et y="+point.y()+")");
-        }       
+            this.log("Je suis un point de coordonnés: (x=" + point.x() + " et y=" + point.y() + ")");
+        }
     }
 
 
@@ -23,19 +23,18 @@ export default class LogGeometryVisitor implements GeometryVisitor<void> {
         if (lineString.isEmpty()) {
             this.log("Je suis une polyligne vide.");
         } else {
-            this.log("Je suis une polyligne definie par "+ lineString.getNumPoints()+" points");
-        }       
+            this.log("Je suis une polyligne definie par " + lineString.getNumPoints() + " points");
+        }
     }
 
     visitGeometryCollection(geometryCollection: GeometryCollection): void {
         if (geometryCollection.isEmpty()) {
             this.log("Je suis une collection de géométries vide.");
         } else {
-            this.log("Je suis une collection de géométries contenant "+ geometryCollection.getNumGeometries()+" géométries.");
-        }           
+            this.log("Je suis une collection de géométries contenant " + geometryCollection.getNumGeometries() + " géométries.");
+        }
     }
 
 }
-  
 
-    
+

@@ -9,7 +9,6 @@ export default class EnveloppeBuilder implements GeometryVisitor<void> {
 
     private xVals: Array<number>;
     private yVals: Array<number>;
-    private results: Enveloppe;
 
     constructor() {
         this.xVals = new Array<number>();
