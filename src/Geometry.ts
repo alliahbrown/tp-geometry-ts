@@ -8,4 +8,5 @@ export default interface Geometry {
     translate(dx: number, dy: number): void;
     getEnvelope(): Enveloppe;
     accept(visitor: GeometryVisitor): void;
+    asText():string;
 }

@@ -3,11 +3,13 @@ import Geometry from "./Geometry";
 import Enveloppe from "./Enveloppe";
 import EnveloppeBuilder from "./EnveloppeBuilder";
 import GeometryVisitor from "./GeometryVisitor";
+import AbstractGeometry from "./AbstractGeometry";
 
-export default class LineString implements Geometry {
+export default class LineString extends AbstractGeometry {
   private points: Point[];  
 
     constructor(points?: Point[]) {
+      super();
         this.points = points || [] ;
     }
 
