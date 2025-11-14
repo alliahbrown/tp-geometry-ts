@@ -3,7 +3,7 @@ import Point from "./Point";
 import LineString from "./Linestring";
 import GeometryCollection from "./GeometryCollection";
 
-export default class WktVisitor implements GeometryVisitor {
+export default class WktVisitor implements GeometryVisitor<void> {
     private buffer: string;
     getResult(): string {
         return this.buffer;

@@ -31,12 +31,12 @@ export default class GeometryWithCachedEnvelope implements Geometry {
 
     translate(dx: number, dy: number): void {
         this.original.translate(dx, dy);
-        this.cachedEnvelope = null; // Invalidate cached envelope
+        this.cachedEnvelope = null;
 
     }
 
-    accept(visitor: GeometryVisitor): void {
-        this.original.accept(visitor);
+    accept<T>(visitor: GeometryVisitor<T>): T {
+        return this.original.accept(visitor);
     }
 
     asText(): string {

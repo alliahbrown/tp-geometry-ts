@@ -5,7 +5,7 @@ import LineString from "./Linestring";
 import Point from "./Point";
 import GeometryCollection from "./GeometryCollection";
 
-export default class EnveloppeBuilder implements GeometryVisitor {
+export default class EnveloppeBuilder implements GeometryVisitor<void> {
 
     private xVals: Array<number>;
     private yVals: Array<number>;
@@ -48,6 +48,6 @@ export default class EnveloppeBuilder implements GeometryVisitor {
             const geom = geometryCollection.getGeometryN(i);
             geom.accept(this);
         }
-}       
-}   
+    }
+}
 

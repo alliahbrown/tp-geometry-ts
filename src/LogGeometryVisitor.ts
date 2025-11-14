@@ -3,7 +3,7 @@ import Point from "./Point";
 import LineString from "./Linestring";
 import GeometryCollection from "./GeometryCollection";
 
-export default class LogGeometryVisitor implements GeometryVisitor {
+export default class LogGeometryVisitor implements GeometryVisitor<void> {
 
     constructor(private log = console.log) {
 
